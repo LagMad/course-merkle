@@ -26,7 +26,7 @@ const Button = ({
       onClick={onClick}
       disabled={disabled}
       className={`${getButtonVariation(variation, path)}
-       text-xl text-white px-7 py-3 rounded-lg transition-all duration-500 ease-in-out ${className}`}
+       text-lg md:text-xl text-white px-7 py-3 rounded-lg transition-all duration-500 ease-in-out ${className}`}
     >
       {children}
     </button>

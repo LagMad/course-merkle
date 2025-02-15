@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@coreui/coreui": "^5.2.0",
+    "@coreui/react": "^5.5.0",
     "antd": "^5.24.0",
     "cra-template": "1.2.0",
     "react": "^19.0.0",
