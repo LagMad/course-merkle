@@ -78,7 +78,6 @@ const Contact = ({ id }) => {
           placeholder={"Your enquiry"}
           type={"dropdown"}
           options={options}
-          className={"mb-5"}
           value={formData.enquiry}
           onChange={(value) => handleChange("enquiry", value)}
           error={errors.enquiry}

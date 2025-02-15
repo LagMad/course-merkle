@@ -48,7 +48,7 @@ const Input = ({
           }
           className={`w-full custom-select cust-placeholder-gray ${
             focused ? "focused" : ""
-          } transition-all duration-300 ease-in-out`}
+          } transition-all duration-300 ease-in-out mb-5`}
           dropdownStyle={{ background: "#512DA7", color: "white" }}
           popupClassName="custom-dropdown"
         >
