@@ -7,9 +7,9 @@ import Contact from './sections/Contact'
 const App = () => {
   return (
     <MainLayout>
-      <Hero/>
-      <Projects/>
-      <Contact/>
+      <Hero id="hero"/>
+      <Projects id="projects"/>
+      <Contact id="contact"/>
     </MainLayout>
   )
 }

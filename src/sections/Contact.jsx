@@ -2,11 +2,11 @@ import React from "react";
 import Input from "../components/ui/Input";
 import Button from "../components/ui/Button";
 
-const Contact = () => {
+const Contact = ({id}) => {
 const options = ["option 1", "option 2", "option 3"]
 
   return (
-    <div className="w-full flex flex-col justify-center items-center bg-cust-purple px-6 sm:px-16 md:px-32 py-16 gap-8 text-white">
+    <div id={id} className="w-full flex flex-col justify-center items-center bg-cust-purple px-6 sm:px-16 md:px-32 py-16 gap-8 text-white">
       <div className="w-full md:w-3/4 lg:w-1/2 xl:w-1/3 text-center sm:text-left text-2xl md:text-3xl lg:text-4xl font-bold -ml-0 md:-ml-10">
         Contact Me
       </div>

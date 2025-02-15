@@ -2,9 +2,9 @@ import React from "react";
 import ProjectsCard from "../components/ProjectsCard";
 import stockphoto from "../assets/images/stockphoto.jpg";
 
-const Projects = () => {
+const Projects = ({ id }) => {
   return (
-    <div className="flex flex-col bg-cust-green px-6 sm:px-16 md:px-20 lg:px-28 xl:px-32 py-16 gap-10 text-white">
+    <div id={id} className="flex flex-col bg-cust-green px-6 sm:px-16 md:px-20 lg:px-28 xl:px-32 py-16 gap-10 text-white">
       <div className="text-left text-2xl md:text-3xl lg:text-4xl font-bold">Featured Projects</div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <ProjectsCard
