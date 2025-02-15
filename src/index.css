@@ -14,6 +14,10 @@
   color: white !important;
 }
 
+.custom-dropdown .ant-empty-description {
+  color: white;
+}
+
 /* Custom styles for the Select component */
 .custom-select .ant-select-selector {
   background-color: #512da7 !important;
@@ -62,7 +66,7 @@
 }
 
 .custom-select .anticon-search {
-    color: white
+    color: #512da7
 }
 
 .custom-dropdown-item .dropdown-item {

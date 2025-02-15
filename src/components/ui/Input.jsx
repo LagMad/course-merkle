@@ -3,15 +3,19 @@ import { Select } from "antd";
 
 const { Option } = Select;
 
-const Input = ({ label, placeholder, type, options = [], className }) => {
+const Input = ({
+  label,
+  placeholder,
+  type,
+  options = [],
+  className,
+  value,
+  onChange,
+  error,
+}) => {
   //   const handleSearch = (value) => {
   //     console.log("Search:", value);
   //   };
-
-  //   const handleChange = (value) => {
-  //     console.log("Selected:", value);
-  //   };
-
   const [focused, setFocused] = useState(false);
 
   const handleFocus = () => {
@@ -37,11 +41,14 @@ const Input = ({ label, placeholder, type, options = [], className }) => {
           //   onSearch={handleSearch}
           onFocus={() => handleFocus()}
           onBlur={() => handleBlur()}
-          on
+          value={value || undefined}
+          onChange={onChange}
           filterOption={(input, option) =>
             option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
           }
-          className={`w-full custom-select cust-placeholder-gray ${focused ? 'focused' : ''} transition-all duration-300 ease-in-out`}
+          className={`w-full custom-select cust-placeholder-gray ${
+            focused ? "focused" : ""
+          } transition-all duration-300 ease-in-out`}
           dropdownStyle={{ background: "#512DA7", color: "white" }}
           popupClassName="custom-dropdown"
         >
@@ -64,15 +71,25 @@ const Input = ({ label, placeholder, type, options = [], className }) => {
         <textarea
           type={type}
           placeholder={placeholder}
-          className="w-full p-3 border-2 border-white rounded-xl bg-cust-purple focus:bg-white text-white focus:text-black focus:outline-none ring-0 placeholder-gray-400 transition-all duration-300 ease-in-out"
+          value={value}
+          onChange={onChange}
+          className={`w-full p-3 border-2 ${
+            error ? "border-red-500" : "border-white"
+          } border-white rounded-xl bg-cust-purple focus:bg-white text-white focus:text-black focus:outline-none ring-0 placeholder-gray-400 transition-all duration-300 ease-in-out`}
         />
       ) : (
         <input
-          type={type}
+          type={type || "text"}
           placeholder={placeholder}
-          className="w-full p-3 border-2 border-white rounded-xl bg-cust-purple focus:bg-white text-white focus:text-black focus:outline-none ring-0 placeholder-gray-400 transition-all duration-300 ease-in-out"
+          value={value}
+          onChange={onChange}
+          className={`w-full p-3 border-2 ${
+            error ? "border-red-500" : "border-white"
+          } border-white rounded-xl bg-cust-purple focus:bg-white text-white focus:text-black focus:outline-none ring-0 placeholder-gray-400 transition-all duration-300 ease-in-out`}
         />
       )}
+
+      {error && <p className="text-red-500 text-sm">{error}</p>}
     </div>
   );
 };
