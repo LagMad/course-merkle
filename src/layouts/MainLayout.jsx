@@ -5,7 +5,7 @@ import Footer from "../components/shared/Footer";
 const MainLayout = ({ children }) => {
   return (
     <>
-      <div className="bg-white font-Poppins">
+      <div className="bg-white font-Poppins overflow-hidden z-0">
         <Navbar />
         {children}
         <Footer />

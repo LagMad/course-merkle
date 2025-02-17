@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Input from "../components/ui/Input";
 import Button from "../components/ui/Button";
 import optionsData from "../data/optionDataDummy.json";
+import { motion } from "framer-motion";
 
 const Contact = ({ id }) => {
   const options = optionsData.enquiryOptions;
@@ -49,14 +50,41 @@ const Contact = ({ id }) => {
   return (
     <div
       id={id}
-      className="w-full flex flex-col justify-center items-center bg-cust-purple px-6 sm:px-16 md:px-32 py-16 gap-8 text-white"
+      className="w-full flex flex-col justify-center items-center bg-cust-purple px-6 sm:px-16 md:px-32 py-16 gap-8 text-white overflow-hidden"
     >
-      <div className="w-full md:w-3/4 lg:w-1/2 xl:w-1/3 text-center sm:text-left text-2xl md:text-3xl lg:text-4xl font-bold -ml-0 md:-ml-10">
+      <motion.div
+        className="w-full md:w-3/4 lg:w-1/2 xl:w-1/3 text-center sm:text-left text-2xl md:text-3xl lg:text-4xl font-bold -ml-0 md:-ml-10"
+        initial={{ opacity: 0, x: 500 }}
+        whileInView={{
+          opacity: 1,
+          x: 0,
+          transition: {
+            type: "spring",
+            duration: 2,
+            damping: 10,
+            stiffness: 100,
+          },
+        }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+      >
         Contact Me
-      </div>
-      <form
+      </motion.div>
+      <motion.form
         onSubmit={handleSubmit}
         className="flex flex-col w-full md:w-3/4 lg:w-1/2 xl:w-1/3 gap-5"
+        initial={{ opacity: 0, y: 100 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: "spring",
+              duration: 0.7,
+              ease: "easeOut"
+            },
+          }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
       >
         <Input
           label={"Name"}
@@ -93,7 +121,7 @@ const Contact = ({ id }) => {
         <Button type={"submit"} variation={"secondary"} className={"w-full"}>
           Submit
         </Button>
-      </form>
+      </motion.form>
     </div>
   );
 };
