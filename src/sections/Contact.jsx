@@ -47,42 +47,6 @@ const Contact = ({ id }) => {
     alert("Form submitted successfully!");
   };
 
-  const inputFields = [
-    {
-      label: "Name",
-      placeholder: "Your name here",
-      type: "text",
-      value: formData.name,
-      onChange: (e) => handleChange("name", e.target.value),
-      error: errors.name,
-    },
-    {
-      label: "Email",
-      placeholder: "your_email@example.com",
-      type: "email",
-      value: formData.email,
-      onChange: (e) => handleChange("email", e.target.value),
-      error: errors.email,
-    },
-    {
-      label: "Type of enquiry",
-      placeholder: "Your enquiry",
-      type: "dropdown",
-      options: options,
-      value: formData.enquiry,
-      onChange: (value) => handleChange("enquiry", value),
-      error: errors.enquiry,
-    },
-    {
-      label: "Your message",
-      placeholder: "Your message here",
-      type: "textarea",
-      value: formData.message,
-      onChange: (e) => handleChange("message", e.target.value),
-      error: errors.message,
-    },
-  ];
-
   return (
     <div
       id={id}
@@ -110,30 +74,50 @@ const Contact = ({ id }) => {
         onSubmit={handleSubmit}
         className="flex flex-col w-full md:w-3/4 lg:w-1/2 xl:w-1/3 gap-5"
         initial={{ opacity: 0, y: 100 }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-          transition: {
-            type: "spring",
-            duration: 0.7,
-            ease: "easeOut",
-          },
-        }}
-        transition={{ duration: 0.7 }}
-        viewport={{ once: true }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: "spring",
+              duration: 0.7,
+              ease: "easeOut"
+            },
+          }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
       >
-        {inputFields.map((field, index) => (
-          <Input
-            key={index}
-            label={field.label}
-            placeholder={field.placeholder}
-            type={field.type}
-            value={field.value}
-            onChange={field.onChange}
-            error={field.error}
-            options={field.options}
-          />
-        ))}
+        <Input
+          label={"Name"}
+          placeholder={"Your name here"}
+          value={formData.name}
+          onChange={(e) => handleChange("name", e.target.value)}
+          error={errors.name}
+        />
+        <Input
+          label={"Email"}
+          placeholder={"your_email@example.com"}
+          type="email"
+          value={formData.email}
+          onChange={(e) => handleChange("email", e.target.value)}
+          error={errors.email}
+        />
+        <Input
+          label={"Type of enquiry"}
+          placeholder={"Your enquiry"}
+          type={"dropdown"}
+          options={options}
+          value={formData.enquiry}
+          onChange={(value) => handleChange("enquiry", value)}
+          error={errors.enquiry}
+        />
+        <Input
+          label={"Your message"}
+          placeholder={"Your message here"}
+          type={"textarea"}
+          value={formData.message}
+          onChange={(e) => handleChange("message", e.target.value)}
+          error={errors.message}
+        />
         <Button type={"submit"} variation={"secondary"} className={"w-full"}>
           Submit
         </Button>
