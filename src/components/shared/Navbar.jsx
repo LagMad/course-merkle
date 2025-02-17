@@ -132,7 +132,7 @@ const Navbar = () => {
         <CDropdownMenu
           className={`${
             visible ? "block" : "hidden"
-          } absolute right-0 top-2 *:0 flex flex-col justify-center items-center w-max bg-cust-black rounded-2xl p-3 shadow-2xl shadow-[rgba(255,255,255,0.3)] gap-3`}
+          } absolute right-0 top-20 flex flex-col justify-center items-center w-max bg-cust-black rounded-2xl p-3 shadow-2xl shadow-[rgba(255,255,255,0.3)] gap-3`}
         >
           <CDropdownItem className="w-full custom-dropdown-item">
             <Button
