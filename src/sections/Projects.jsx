@@ -12,8 +12,8 @@ const Projects = ({ id }) => {
 
       {/* Title */}
       <motion.div
-        className="text-left text-2xl md:text-3xl lg:text-4xl font-bold"
-        initial={{ opacity: 0, x: 500 }}
+        className="text-left text-3xl lg:text-4xl font-bold"
+        initial={{ opacity: 0, x: 100 }}
         whileInView={{
           opacity: 1,
           x: 0,
@@ -33,7 +33,7 @@ const Projects = ({ id }) => {
       {/* Project Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <motion.div
-          initial={{ opacity: 0, x: -500 }}
+          initial={{ opacity: 0, x: -100 }}
           whileInView={{
             opacity: 1,
             x: 0,
@@ -53,7 +53,7 @@ const Projects = ({ id }) => {
           />
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, x: 500 }}
+          initial={{ opacity: 0, x: 100 }}
           whileInView={{
             opacity: 1,
             x: 0,
@@ -73,7 +73,7 @@ const Projects = ({ id }) => {
           />
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, x: -500 }}
+          initial={{ opacity: 0, x: -100 }}
           whileInView={{
             opacity: 1,
             x: 0,
@@ -93,7 +93,7 @@ const Projects = ({ id }) => {
           />
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, x: 500 }}
+          initial={{ opacity: 0, x: 100 }}
           whileInView={{
             opacity: 1,
             x: 0,

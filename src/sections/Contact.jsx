@@ -53,8 +53,8 @@ const Contact = ({ id }) => {
       className="w-full flex flex-col justify-center items-center bg-cust-purple px-6 sm:px-16 md:px-32 py-16 gap-8 text-white overflow-hidden"
     >
       <motion.div
-        className="w-full md:w-3/4 lg:w-1/2 xl:w-1/3 text-center sm:text-left text-2xl md:text-3xl lg:text-4xl font-bold -ml-0 md:-ml-10"
-        initial={{ opacity: 0, x: 500 }}
+        className="w-full md:w-3/4 lg:w-1/2 xl:w-1/3 text-center sm:text-left text-3xl lg:text-4xl font-bold -ml-0 md:-ml-10"
+        initial={{ opacity: 0, x: 100 }}
         whileInView={{
           opacity: 1,
           x: 0,
