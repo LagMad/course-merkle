@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Button from "../ui/Button";
+// import Button from "../ui/Button";
 import { IoMdMail } from "react-icons/io";
 import { FaGithub, FaLinkedin, FaStackOverflow } from "react-icons/fa";
 import { BsMedium } from "react-icons/bs";
@@ -11,6 +11,7 @@ import {
   CDropdownMenu,
   CDropdownToggle,
 } from "@coreui/react";
+import { Button } from "@chakra-ui/react";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
@@ -74,7 +75,8 @@ const Navbar = () => {
       {/* Desktop */}
       <div className="hidden md:flex flex-row justify-between items-center w-full">
         <div className="flex flex-row justify-start items-center md:gap-0 lg:gap-3">
-          {socialLinks.map((link, index) => (
+          {/* Tailwind */}
+          {/* {socialLinks.map((link, index) => (
             <Button
               key={index}
               className={`${isScrolled ? "bg-cust-black" : "bg-transparent"}`}
@@ -85,10 +87,48 @@ const Navbar = () => {
                 className: "w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10",
               })}
             </Button>
-          ))}
+          ))} */}
+
+          {/* Chakra */}
+          <Button
+            variant={"ghost"}
+            className="hover:text-black"
+            onClick={() => handleIconClick("mailto:hizkiajeremmy@gmail.com")}
+          >
+            <IoMdMail size={32} />
+          </Button>
+          <Button
+            variant={"ghost"}
+            className="hover:text-black"
+            onClick={() => handleIconClick("https://github.com/LagMad")}
+          >
+            <FaGithub size={32} />
+          </Button>
+          <Button
+            variant={"ghost"}
+            className="hover:text-black"
+            onClick={() => handleIconClick("https://linkedin.com/in/hizkiajeremmy")}
+          >
+            <FaLinkedin size={32} />
+          </Button>
+          <Button
+            variant={"ghost"}
+            className="hover:text-black"
+            onClick={() => handleIconClick("https://medium.com")}
+          >
+            <BsMedium size={32} />
+          </Button>
+          <Button
+            variant={"ghost"}
+            className="hover:text-black"
+            onClick={() => handleIconClick("https://stackoverflow.com")}
+          >
+            <FaStackOverflow size={32} />
+          </Button>
         </div>
         <div className="flex flex-row justify-end gap-3">
-          {navLinks.map((link, index) => (
+          {/* Tailwind */}
+          {/* {navLinks.map((link, index) => (
             <Button
               key={index}
               className={`${isScrolled ? "bg-cust-black" : "bg-transparent"}`}
@@ -97,7 +137,23 @@ const Navbar = () => {
             >
               {link.label}
             </Button>
-          ))}
+          ))} */}
+
+          {/* Chakra */}
+          <Button
+            variant={"ghost"}
+            className="hover:text-black"
+            onClick={() => scrollToSection("projects")}
+          >
+            Projects
+          </Button>
+          <Button
+            variant={"ghost"}
+            className="hover:text-black"
+            onClick={() => scrollToSection("contact")}
+          >
+            Contact Me
+          </Button>
         </div>
       </div>
 
@@ -120,7 +176,7 @@ const Navbar = () => {
             visible ? "block" : "hidden"
           } absolute right-0 top-20 flex flex-col justify-center items-center w-max bg-cust-black rounded-2xl p-3 shadow-2xl shadow-[rgba(255,255,255,0.3)] gap-3`}
         >
-          {socialLinks.map((link, index) => (
+          {/* {socialLinks.map((link, index) => (
             <CDropdownItem key={index} className="w-full">
               <Button
                 variation="primary"
@@ -132,8 +188,8 @@ const Navbar = () => {
                 })}
               </Button>
             </CDropdownItem>
-          ))}
-          {navLinks.map((link, index) => (
+          ))} */}
+          {/* {navLinks.map((link, index) => (
             <CDropdownItem key={index}>
               <Button
                 variation="primary"
@@ -143,7 +199,7 @@ const Navbar = () => {
                 {link.label}
               </Button>
             </CDropdownItem>
-          ))}
+          ))} */}
         </CDropdownMenu>
       </CDropdown>
     </nav>

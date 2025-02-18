@@ -1,6 +1,20 @@
 import React, { useState } from "react";
-import Input from "../components/ui/Input";
-import Button from "../components/ui/Button";
+
+// Tailwind
+// import Input from "../components/ui/Input";
+// import Button from "../components/ui/Button";
+
+// Chakra
+import {
+  Button,
+  Input,
+  Select,
+  Textarea,
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+} from "@chakra-ui/react";
+
 import optionsData from "../data/optionDataDummy.json";
 import { motion } from "framer-motion";
 
@@ -122,7 +136,7 @@ const Contact = ({ id }) => {
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
       >
-        {inputFields.map((field, index) => (
+        {/* {inputFields.map((field, index) => (
           <Input
             key={index}
             label={field.label}
@@ -135,6 +149,67 @@ const Contact = ({ id }) => {
           />
         ))}
         <Button type={"submit"} variation={"secondary"} className={"w-full"}>
+          Submit
+        </Button> */}
+        <FormControl isInvalid={!!errors.name}>
+          <FormLabel>Name</FormLabel>
+          <Input
+            placeholder="Your name here"
+            value={formData.name}
+            onChange={(e) => handleChange("name", e.target.value)}
+          />
+          <FormErrorMessage>{errors.name}</FormErrorMessage>
+        </FormControl>
+
+        <FormControl isInvalid={!!errors.email}>
+          <FormLabel>Email</FormLabel>
+          <Input
+            placeholder="your_email@example.com"
+            type="email"
+            value={formData.email}
+            onChange={(e) => handleChange("email", e.target.value)}
+            css={{ "--focus-color": "white" }}
+          />
+          <FormErrorMessage>{errors.email}</FormErrorMessage>
+        </FormControl>
+
+        <FormControl isInvalid={!!errors.enquiry}>
+          <FormLabel>Type of Enquiry</FormLabel>
+          <Select
+            placeholder="Select an enquiry type"
+            value={formData.enquiry}
+            onChange={(e) => handleChange("enquiry", e.target.value)}
+            sx={{
+              '> option': {
+                background: '#512da7',
+                color: 'white',
+              },
+            }}
+          >
+            {options.map((option, index) => (
+              <option key={index} value={option}>
+                {option}
+              </option>
+            ))}
+          </Select>
+          <FormErrorMessage>{errors.enquiry}</FormErrorMessage>
+        </FormControl>
+
+        <FormControl isInvalid={!!errors.message}>
+          <FormLabel>Your Message</FormLabel>
+          <Textarea
+            placeholder="Your message here"
+            value={formData.message}
+            onChange={(e) => handleChange("message", e.target.value)}
+          />
+          <FormErrorMessage>{errors.message}</FormErrorMessage>
+        </FormControl>
+        <Button
+          type="submit"
+          variant={"solid"}
+          className="text-cust-purple"
+          onClick={handleSubmit}
+        >
           Submit
         </Button>
       </motion.form>
