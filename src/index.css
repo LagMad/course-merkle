@@ -31,10 +31,10 @@
 }
 
 .custom-select.focused .ant-select-selector {
-    background-color: white !important;
-    color: black !important;
-    outline: none !important;
-  }
+  background-color: white !important;
+  color: black !important;
+  outline: none !important;
+}
 
 .custom-select .ant-select-selector:focus {
   background-color: white !important;
@@ -43,12 +43,12 @@
 }
 
 .custom-select .ant-select-selection-item {
-    color: white !important;
-  }
+  color: white !important;
+}
 
-  .custom-select.focused .ant-select-selection-item {
-    color: black !important;
-  }
+.custom-select.focused .ant-select-selection-item {
+  color: black !important;
+}
 
 .custom-select .ant-select-selection-placeholder {
   color: #9ca3af !important;
@@ -60,15 +60,19 @@
 } */
 
 .custom-select .ant-select-arrow {
-    color: white !important;
-    width: 20px !important;
-    height: 30px !important;
+  color: white !important;
+  width: 20px !important;
+  height: 30px !important;
 }
 
 .custom-select .anticon-search {
-    color: #512da7
+  color: #512da7;
 }
 
 .custom-dropdown-item .dropdown-item {
   width: 100% !important;
+}
+
+.custom-chakra-select .chakra-select__wrapper:focus {
+  background-color: #512da7 !important;
 }
